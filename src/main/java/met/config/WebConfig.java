@@ -10,5 +10,4 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "met.controller")
 @Import(value = {InternationalizationConfig.class, ThymeleafConfig.class})
 public class WebConfig {
-    
 }
