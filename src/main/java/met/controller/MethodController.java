@@ -18,13 +18,23 @@ public class MethodController {
     @GetMapping("/method")
     public String openMethod(Model model) {
         Method method = new Method();
-        method.setkTrudFun(12);
+
+/*        method.setkTrudFun(12);
         method.setkTrudEnt(26);
         method.setkTrudClass(134);
         method.setkTrudConn(102);
         method.setkTrudNod(4);
         method.setWorkTime(165);
-        method.setkUser(42);
+        method.setkUser(42);*/
+
+        method.setkTrudFun(1);
+        method.setkTrudEnt(1);
+        method.setkTrudClass(1);
+        method.setkTrudConn(1);
+        method.setkTrudNod(1);
+        method.setWorkTime(1);
+        method.setkUser(1);
+
         model.addAttribute("method", method);
         return "method";
     }
