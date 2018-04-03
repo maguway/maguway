@@ -189,7 +189,7 @@ public class Method {
                     rMax = i;
                     return rMax;
                 } else if (mm < hm[i][0]) {
-                    max = hm[i-1][0];
+//                    max = hm[i-1][0];
                     rMax = i;
                     return rMax;
                 }
@@ -206,6 +206,7 @@ public class Method {
     public double getrMed() {
         rMed = rMax + rMin;
         rMed = rMed/2;
+        if(rMin > rMed) {rMed = rMin;}
         return rMed;
     }
 
