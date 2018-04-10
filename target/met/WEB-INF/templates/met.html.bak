@@ -232,7 +232,7 @@
         <br>
         <h5><label style="color: midnightblue"><b><i><u>Поправочные коэффициенты:</u></i></b></label></h5>
 
-        <table border="1" cellspacing="10" cellpadding="15" style="width: 1100px">
+        <table border="1" cellspacing="1" cellpadding="2" style="width: 1100px">
             <tr style="color:midnightblue">
                 <td align="center"><b>Группа частных поправочных коэффициентов</b></td>
                 <td align="center"><b>Фактор и обозначение частного поправочного коэффициента</b></td>
