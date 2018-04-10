@@ -11,8 +11,6 @@
 <body>
 
 
-
-
 <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
 <!--<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">-->
 <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
@@ -39,7 +37,10 @@
                 <a href="#" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Prices</a>
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">Prices</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#logModal">Log in</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link disabled">About as</a>
@@ -51,7 +52,6 @@
         </form>
     </div>
 </nav>
-
 
 <div class="container-fluid p-0">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -94,11 +94,124 @@
 
 <div class="container-fluid">
     <div class="container">
-        <div class="row text-center">
-            <div class="col">img.w-100</div>
-            <div class="col">img.w-100</div>
-            <div class="col">img.w-100</div>
-            <div class="col">img.w-100</div>
+        <div class="row text-center justify-content-center">
+            <!--div class="row text-center justify-content-end"-->
+            <!--div class="row text-center justify-content-arround"-->
+            <!--div class="row text-center justify-content-between"-->
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci debitis deserunt hic iure
+                    tempore.</p></div>
+            <!--<div class="col-4"><img src="img/07.png" alt="" class="w-100"></div>-->
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem iure nobis quod quos
+                    sequi.</p></div>
+            <!--Новая строка-->
+            <!--div class="w-100"></div-->
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum dolorem eius harum possimus,
+                    praesentium!</p></div>
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid magnam necessitatibus
+                    provident! Esse, ratione.</p></div>
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto magni nisi non quam quasi,
+                    voluptatibus?</p></div>
+            <div class="col-xs-12 col-sm-4 col-lg-3"><img src="img/07.png" alt="" class="w-100">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dolore, dolorum earum facere
+                    nesciunt voluptas.</p></div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+Модальные окна
+Несколько размеров модальный окон - малые, средние и большие
+после modal-dialog, перед role
+modal-sm
+modal       не писать ничего, подразумевается только
+modal-lg
+Анимация включается с помощью fade
+-->
+
+<!--Окно Prising-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-label="exampleModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-4">aaaa</div>
+                        <div class="col-8">aaaaaaaa</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Окно Log in-->
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-label="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logModalLabel">Авторизация</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="logInputEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-lg"
+                                           id="logInputEmail" aria-describedby="emailHelp"
+                                           placeholder="Email" required>
+                                    <small id="emailHelp" class="form-text text-muted">
+                                        Enter your email
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="logInputPass">Password</label>
+                                    <input type="password" class="form-control form-control-sm"
+                                           id="logInputPass" placeholder="Password" required>
+                                    <small id="passHelp" class="form-text text-muted">
+                                        Пароль должен содержать не менее 10 символов
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Запомнить меня
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

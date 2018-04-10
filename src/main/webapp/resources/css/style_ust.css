@@ -10,3 +10,7 @@ body{
     height: 50px;
     width: 50px;
 }
+
+.row div {
+    background: #5a6268;
+}

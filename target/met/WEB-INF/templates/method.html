@@ -1,16 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Method</title>
-    <!--Latest compiled and minifed CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--jQuery library-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Latest compiled JavaScript-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+
+    <title>METHOD method</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#0060cc">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupporedtContent" aria-controls="navbarSupporedtContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupporedtContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link"><h4>Справочная информация</h4></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="/method" class="nav-link"><h4>Расчет стоимости</h4></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/docs" class="nav-link"><h4>Документация</h4></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
 <div class="container">
     <form th:action="@{/method}" method="post" th:object="${method}">
         <h4><label style="color: midnightblue"><b><i><u>
@@ -440,5 +463,9 @@
 
     </form>
 </div>
+
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+
 </body>
 </html>
