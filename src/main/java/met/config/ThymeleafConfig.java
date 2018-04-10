@@ -44,6 +44,6 @@ public class ThymeleafConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler ("/css/**").addResourceLocations ( "/resources/css/" );
         registry.addResourceHandler ("/img/**").addResourceLocations ( "/resources/img/" );
         registry.addResourceHandler ("/js/**").addResourceLocations ( "/resources/js/" );
-        registry.addResourceHandler ("/docs/**").addResourceLocations ( "/resources/docs/" );
+        registry.addResourceHandler ("/docums/**").addResourceLocations ( "/resources/docums/" );
     }
 }
