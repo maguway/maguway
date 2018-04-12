@@ -5,11 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{/css/style_ust.css}">
-    <script th:src="@{/js/jquery-slim.min.js}"></script>
-    <script th:src="@{/js/bootstrap.js}"></script>
-    <script th:src="@{/js/popper.min.js}"></script>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
 
     <title>METHOD docs</title>
 </head>
@@ -23,30 +19,40 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupporedtContent">
-            <ul class="nav nav-tabs" id="navNavbar" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" id="info-tab" href="/" aria-controls="info"
-                       aria-selected="true"><h5>Справочная информация</h5></a>
+            <ul class="nav nav-tabs">
+                <li>
+                    <a href="/" class="nav-link"><h4>Справочная информация</h4></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="cont-tab" href="/method" aria-controls="info"
-                       aria-selected="true"><h5>Расчет стоимости</h5></a>
+                <li>
+                    <a href="/method" class="nav-link"><h4>Расчет стоимости</h4></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" id="docs-tab" href="/documents" aria-controls="info"
-                       aria-selected="true"><h5>Документация</h5></a>
+                <li class="active">
+                    <a href="/documents" class="nav-link"><h4>Документация</h4></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Домашняя</a></li>
+        <li role="presentation"><a href="#">Каталог</a></li>
+        <li role="presentation"><a href="#">Контакты</a></li>
+    </ul>
+</div>
+
+
 <br>
 <div class="container text-justify" style="text-indent: 40px">
     <ul>
-        <li><a href="/docums/method.pdf" style="color: darkblue">Методика расчёта затрат на создание, развитие и сопровождение информационных
+        <li><a href="/docums/method.pdf">Методика расчёта затрат на создание, развитие и сопровождение информационных
             систем государственных органов</a></li>
     </ul>
 </div>
+
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
 
 </body>
 </html>
