@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style_ust.css}">
+    <script th:src="@{/js/jquery-slim.min.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+
+    <title>METHOD docs</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#0060cc">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupporedtContent" aria-controls="navbarSupporedtContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupporedtContent">
+            <ul class="nav nav-tabs" id="navNavbar" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="info-tab" href="/" aria-controls="info"
+                       aria-selected="true"><h5>Справочная информация</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="cont-tab" href="/method" aria-controls="info"
+                       aria-selected="true"><h5>Расчет стоимости</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="docs-tab" href="/documents" aria-controls="info"
+                       aria-selected="true"><h5>Документация</h5></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<div class="container text-justify" style="text-indent: 40px">
+    <ul>
+        <li><a href="/docums/method.pdf" style="color: darkblue">Методика расчёта затрат на создание, развитие и сопровождение информационных
+            систем государственных органов</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
