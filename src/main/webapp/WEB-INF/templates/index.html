@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style_ust.css}">
+    <script th:src="@{/js/jquery-slim.min.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
 
     <title>METHOD home</title>
 </head>
@@ -19,15 +23,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupporedtContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a href="/" class="nav-link"><h4>Справочная информация</h4></a>
+            <ul class="nav nav-tabs" id="navNavbar" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="info-tab" href="/" aria-controls="info"
+                       aria-selected="true"><h5>Справочная информация</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/method" class="nav-link"><h4>Расчет стоимости</h4></a>
+                    <a class="nav-link" id="cont-tab" href="/method" aria-controls="info"
+                       aria-selected="true"><h5>Расчет стоимости</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/documents" class="nav-link"><h4>Документация</h4></a>
+                    <a class="nav-link" id="docs-tab" href="/documents" aria-controls="info"
+                       aria-selected="true"><h5>Документация</h5></a>
                 </li>
             </ul>
         </div>
@@ -102,9 +109,6 @@
 
 
 </div>
-
-<script th:src="@{/js/jquery-3.3.1.js}"></script>
-<script th:src="@{/js/bootstrap.js}"></script>
 
 </body>
 </html>
