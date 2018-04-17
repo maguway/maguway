@@ -1,6 +1,6 @@
-body{
+/*body{
     height: 1890px;
-}
+}*/
 
 .p-0{
     padding: 0;
@@ -11,24 +11,56 @@ body{
     width: 50px;
 }
 
-/*
-.row div {
-    background: #5a6268;
-}*/
 
-a {
-    color: #bff;
-    text-decoration: none;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-/*a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}*/
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+    color: #fff;
+    background-color: #0056b3;
+}
 
-a:hover {
-    color: #eff;
-    text-decoration: underline;
+p {
+    margin: 0.3rem;
+    font-family: "Arial Rounded MT Bold";
+    text-align: right;
+}
+
+label {
+    margin: 0.3rem;
+}
+
+th {
+    text-align: inherit;
+    text-align: left;
+    padding: 1rem;
+}
+
+.spoiler-content{
+    display:none;  /**скрываем блок контента спойлера**/
+    padding:15px 20px; /**добавляем внутренний отступ**/
+}
+
+/**Стили блока с текстом внутри спойлера**/
+.spoiler-content{
+    display:none;  /**скрываем блок контента спойлера**/
+    padding:15px 20px; /**добавляем внутренний отступ**/
+    border:1px solid #ccc; /**рамка блока контента спойлера**/
+    margin-top:5px; /**отступ сверху**/
+    background:#F0F0F0; /**фон блока контента спойлера**/
+}
+/**Стили блока оборачивающего каждый блок**/
+.spoiler-block{
+    margin-top:10px;
+}
+/**Стили кнопки спойлера**/
+.spoiler-title {
+    border:1px solid #B9B9B9;
+    background: #ccc;/**обычный фон для браузеров, которые не поддерживают градиент**/
+    background:linear-gradient(#CACACA, #E8E8E8);/**градиентный фон**/
+    padding:10px;/**внутренний отступ**/
+    text-decoration:none;/**убираем подчёркивание у ссылки**/
+    color:#000; /**цвет текста ссылки**/
+    display:block; /**делаем ссылку на всю ширину**/
 }

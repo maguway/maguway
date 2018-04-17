@@ -14,9 +14,9 @@ public class LoginController {
         return new Method();
     }*/
 
-    @GetMapping("/login")
+    @GetMapping("/logining")
     public String openMethod(Model model) {
-        return "login";
+        return "logining";
     }
 
 }
