@@ -2,9 +2,11 @@ package met.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.context.annotation.ApplicationScope;
 
 @Data
 @NoArgsConstructor
+@ApplicationScope
 public class Method {
 
     private int kTrudFun, kTrudEnt, kTrudClass, kTrudConn, kTrudNod, workTime;

@@ -34,7 +34,7 @@ label {
 th {
     text-align: inherit;
     text-align: left;
-    padding: 1rem;
+    margin: 1rem;
 }
 
 .spoiler-content{

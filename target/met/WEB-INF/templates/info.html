@@ -11,13 +11,14 @@
     <script th:src="@{/js/bootstrap.js}"></script>
     <script th:src="@{/js/popper.min.js}"></script>
 
-    <title>METHOD home</title>
+    <title>METHOD info</title>
     <link rel="icon" th:href="@{/img/favicon.ico}" type="image/ico">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#0060cc">
     <div class="container">
+        <img th:src="@{img/logo_top.png}" alt="Logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupporedtContent" aria-controls="navbarSupporedtContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -27,22 +28,31 @@
             <ul class="navbar-nav mr-auto" id="navNavbar" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link" id="cont-tab" href="/" aria-controls="info"
-                       aria-selected="true"><h5>Расчет стоимости</h5></a>
+                       aria-selected="true"><h5>расчет стоимости</h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" id="info-tab" href="/info" aria-controls="info"
-                       aria-selected="true"><h5>Справочная информация</h5></a>
+                       aria-selected="true"><h5>справочная информация</h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="docs-tab" href="/documents" aria-controls="info"
-                       aria-selected="true"><h5>Документация</h5></a>
+                       aria-selected="true"><h5>документация</h5></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 <br>
-<div class="container text-justify" style="text-indent: 40px">
+<!--<div class="container text-justify" style="text-indent: 40px">-->
+<div class="container text-justify">
+
+    <h4><label style="color: royalblue"><b>
+        Краткая информация по методике расчета затрат на создание и сопровождение ИС
+    </b></label></h4>
+
+    <br>
+
     <p style="text-align: justify">
         Настоящая Методика расчёта затрат на создание, развитие и сопровождение информационных систем
         государственных органов (далее - Методика) разработана в соответствии с пунктом 1 статьи 14 Закона Донецкой
@@ -53,7 +63,8 @@
     </p>
 
 
-    <p style="text-align: justify">Необходимо ввести исходные данные:<br>
+    <p style="text-align: justify">
+        Необходимо ввести исходные данные:<br>
         1) количество вариантов использования (Case) - C;<br>
         2) количество типов объектов (бизнес объектов) (Entity) - Е;<br>
         3) количество свойств типов объектов (Tool) - Т;<br>
@@ -67,8 +78,11 @@
     <p style="text-align: justify">
         Базовая трудоёмкость каждого процесса разработки рассчитывается как сумма произведений единиц измерения
         функционального размера и значений нормативов трудоёмкости соответственно.<br>
-        Базовая трудоёмкость Sj процесса разработки с номером j рассчитывается по следующей формуле:<br><br>
-        <b>Sj = 1/Wv * [C*Sj(C) + E*Sj(E) + T*Sj(T) + I*Sj(I) + N*Sj(N)], (1)</b><br><br>
+        Базовая трудоёмкость Sj процесса разработки с номером j рассчитывается по следующей формуле:
+    </p>
+    <!--<b>Sj = 1/Wv * [C*Sj(C) + E*Sj(E) + T*Sj(T) + I*Sj(I) + N*Sj(N)], (1)</b><br><br>-->
+    <img th:src="@{img/s_01.gif}" alt="Sj = 1/Wv * [C*Sj(C) + E*Sj(E) + T*Sj(T) + I*Sj(I) + N*Sj(N)]">
+    <p style="text-align: justify">
         где:<br>
         <b>Sj</b> - трудоёмкость процесса разработки с номером j в [человеко-месяц];<br>
         <b>j</b> - номер процесса разработки (значения от 1 до 6);<br>
@@ -107,7 +121,6 @@
         Каждая группа состоит из соответствующих факторов, влияющих на трудоёмкость разработки, а каждый фактор из
         возможных значений фактора.
     </p>
-
 
 </div>
 

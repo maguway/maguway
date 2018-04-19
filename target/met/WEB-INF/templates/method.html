@@ -18,6 +18,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#0060cc">
     <div class="container">
+        <img th:src="@{img/logo_top.png}" alt="Logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupporedtContent" aria-controls="navbarSupporedtContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +44,9 @@
 </nav>
 
 <br>
-
 <div class="container">
     <form th:action="@{/method}" method="post" th:object="${method}">
-        <h4><label style="color: midnightblue"><b>
+        <h4><label style="color: royalblue"><b>
             Расчёт затрат на создание, развитие и сопровождение информационных систем государственных органов
         </b></label></h4>
         <br>
@@ -127,12 +127,12 @@
         <br>
 
         <div class="spoiler-block">
-            <a href="#" class="spoiler-title" style="color: midnightblue"><h5>поправочные коэффициенты</h5></a>
+            <a href="#" class="spoiler-title" style="color: royalblue"><h5>поправочные коэффициенты</h5></a>
             <div class="spoiler-content">
 
-                <table border="1" bordercolor="lightslategray" style="width: 1050px; border: 0px solid lightslategray"
+                <table border="1" bordercolor="lightgray" style="width: 1050px; border: 0px solid lightgray"
                        rules="rows" cellspacing="1" cellpadding="2">
-                    <tr style="color:midnightblue">
+                    <tr style="color:royalblue">
                         <th>группа частных поправочных коэффициентов</th>
                         <th>фактор и обозначение частного поправочного коэффициента</th>
                         <th>описание фактора частного поправочного коэффициента</th>
@@ -241,7 +241,7 @@
                         <td style="padding: 5px"><b>К10</b> исходный язык ИС</td>
                         <td>
                             <select id="kTrud_k10" class="form-control" th:field="*{kTrud_k10}">
-                                <option value=1.0 selected>1.0 - объектно-ориентированный (Си++ или эквивалентный)
+                                <option value=1.0 selected>1.0 - объектно-ориентированный (C++ или эквивалентный)
                                 </option>
                                 <option value=1.07>1.07 - функциональный (Лисп или эквивалентный)</option>
                                 <option value=1.08>1.08 - традиционный (Кобол, Фортран и т.д.)</option>
@@ -347,148 +347,162 @@
         <div>
             <button class="btn btn-success">Выполнить</button>
         </div>
+        <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-        <br>
+        <div th:if="${method.rMin}!=0">
+            <br>
 
-        <h5><label style="color: midnightblue"><b>результат:</b></label></h5>
+            <h5><label style="color: royalblue"><b>результат:</b></label></h5>
 
-        <table border="1" bordercolor="lightslategray" style="width: 1100px; border: 0px solid lightslategray"
-            rules="rows">
-            <tr style="color:midnightblue">
-                <th style="width: 185px">сроки разразботки</th>
-                <th style="width: 520px"><p th:if="${method.rMed}!=${method.cutLim}">с учетом сокращённого в пределах
-                    возможного периода в месяцах:</p></th>
-                <th style="padding: 0"><p th:if="${method.rMed}!=${method.cutLim}" th:text="${method.cutLim}"></p></th>
-                <th></th>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="kTrudConn">минимальный срок разработки в месяцах:</label>
-                </td>
-                <td style="width: 100px">
-                    <p th:text="${method.rMin}"></p>
-                </td>
-                <td style="width: 30px"></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="kTrudConn">максимальный срок разработки в месяцах:</label>
-                </td>
-                <td>
-                    <p th:text="${method.rMax}"></p>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="kTrudConn">предполагаемый срок разработки в месяцах:</label>
-                </td>
-                <td>
-                    <p th:text="${method.rMed}"></p>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="kTrudConn">предполагаемый срок разработки в годах (минимум 1):</label>
-                </td>
-                <td>
-                    <p th:text="${method.yearMed}"></p>
-                </td>
-                <td></td>
-            </tr>
-        </table>
+            <table border="1" bordercolor="lightgray" style="width: 1100px; border: 0px solid lightgray"
+                   rules="rows">
+                <tr style="color:royalblue">
+                    <th style="width: 190px">сроки разразботки</th>
+                    <th style="width: 610px"><label th:if="${method.rMed}!=${method.cutLim}">с учетом сокращения в
+                        пределах возможного периода в месяцах:</label></th>
+                    <th style="width: 80px; padding: 0"><p th:if="${method.rMed}!=${method.cutLim}"
+                                                           th:text="${method.cutLim}"></p></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="kTrudConn">минимальный срок разработки в месяцах:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.rMin}"></p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="kTrudConn">максимальный срок разработки в месяцах:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.rMax}"></p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="kTrudConn">предполагаемый срок разработки в месяцах:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.rMed}"></p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="kTrudConn">предполагаемый срок разработки в годах (минимум 1):</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.yearMed}"></p>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
 
-        <br>
+            <br>
 
-        <table border="1" bordercolor="lightslategray" style="width: 1100px; border: 0px solid lightslategray"
-               rules="rows">
-            <tr style="color:midnightblue">
-                <th th:colspan="3">текущие расходы в течение года</th>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">стоимость техподдержки кодов ППО ИС за год</label>
-                </td>
-                <td style="width: 80px">
-                    <p th:text="${method.costTech}"></p>
-                </td>
-                <td align="center" style="width: 60px">рубли</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">стоимость техподдержки эксплуатации ППО ИС за год:</label>
-                </td>
-                <td>
-                    <p th:text="${method.costOneYearSup}"
-                    ></p>
-                </td>
-                <td align="center">рубли</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">стоимость сопровождения ППО ИС за год Ссппо:</label>
-                </td>
-                <td>
-                    <p th:text="${method.costAccomp}"></p>
-                </td>
-                <td align="center">рубли</td>
-            </tr>
-        </table>
+            <table border="1" bordercolor="lightgray" style="width: 1100px; border: 0px solid lightgray"
+                   rules="rows">
+                <tr style="color:royalblue">
+                    <th th:colspan="4">текущие расходы в течение года</th>
+                </tr>
+                <tr>
+                    <td width="750px">
+                        <label for="kTrudConn">стоимость техподдержки кодов ППО ИС за год</label>
+                    </td>
+                    <td style="width: 130px">
+                        <p th:text="${method.costTech}"></p>
+                    </td>
+                    <td></td>
+                    <td style="width: 160px">рубли</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">стоимость техподдержки эксплуатации ППО ИС за год:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.costOneYearSup}"
+                        ></p>
+                    </td>
+                    <td></td>
+                    <td>рубли</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">стоимость сопровождения ППО ИС за год Ссппо:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.costAccomp}"></p>
+                    </td>
+                    <td></td>
+                    <td>рубли</td>
+                </tr>
+            </table>
 
-        <br>
+            <br>
 
-        <table border="1" bordercolor="lightslategray" style="width: 1100px; border: 0px solid lightslategray"
-               rules="rows">
-            <tr style="color:midnightblue">
-                <th th:colspan="3">общие затраты</th>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">трудоёмкость:</label>
-                </td>
-                <td style="width: 80px">
-                    <p th:text="${method.mm}"></p>
-                </td>
-                <td align="center" style="width: 60px">чел/мес</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">трудоёмкость с учетом сокращения срока:</label>
-                </td>
-                <td>
-                    <p th:text="${method.newmm}"></p>
-                </td>
-                <td align="center">чел/мес</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">средняя трудоемкость в год:</label>
-                </td>
-                <td>
-                    <p th:text="${method.yearmm}"></p>
-                </td>
-                <td align="center">чел/мес</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">количество персонала (минимум 12):</label>
-                </td>
-                <td>
-                    <p th:text="${method.persons}"></p>
-                </td>
-                <td align="center">ед.</td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="kTrudConn">стоимость работ на разработку ППО ИС Сппо:</label>
-                </td>
-                <td>
-                    <p th:text="${method.costWork}"></p>
-                </td>
-                <td align="center">рубли</td>
-            </tr>
-        </table>
+            <table border="1" bordercolor="lightgray" style="width: 1100px; border: 0px solid lightgray"
+                   rules="rows">
+                <tr style="color:royalblue">
+                    <th th:colspan="4">общие затраты</th>
+                </tr>
+                <tr>
+                    <td width="750px">
+                        <label for="kTrudConn">трудоёмкость:</label>
+                    </td>
+                    <td width="130px">
+                        <p th:text="${method.mm}"></p>
+                    </td>
+                    <td></td>
+                    <td width="160px">чел/мес</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">трудоёмкость с учетом сокращения срока:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.newmm}"></p>
+                    </td>
+                    <td></td>
+                    <td>чел/мес</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">средняя трудоемкость в год:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.yearmm}"></p>
+                    </td>
+                    <td></td>
+                    <td>чел/мес</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">количество персонала (минимум 12):</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.persons}"></p>
+                    </td>
+                    <td></td>
+                    <td>ед.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kTrudConn">стоимость работ на разработку ППО ИС Сппо:</label>
+                    </td>
+                    <td>
+                        <p th:text="${method.costWork}"></p>
+                    </td>
+                    <td></td>
+                    <td>рубли</td>
+                </tr>
+            </table>
+        </div>
+
 
     </form>
 </div>
