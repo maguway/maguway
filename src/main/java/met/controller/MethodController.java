@@ -4,14 +4,14 @@ import met.model.Method;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.context.annotation.ApplicationScope;
-import org.springframework.web.context.annotation.SessionScope;
+
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 
 @Controller
-@ApplicationScope
-public class MethodController {
+@SessionScoped
+public class MethodController implements Serializable{
 
 /*    @ModelAttribute("method")
     public Method method() {

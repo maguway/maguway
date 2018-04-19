@@ -2,14 +2,16 @@ package met.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.context.annotation.ApplicationScope;
+
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-@ApplicationScope
-public class Method {
+@SessionScoped
+public class Method implements Serializable{
 
-    private int kTrudFun, kTrudEnt, kTrudClass, kTrudConn, kTrudNod, workTime;
+    private Integer kTrudFun, kTrudEnt, kTrudClass, kTrudConn, kTrudNod, workTime;
 
 
 
@@ -30,13 +32,13 @@ public class Method {
     private int rMin;           // минимальный срок разработки
     private int rMax;           // максимальный срок разработки
     private double rMed;        // среднее арифм срока разработки
-    private double cutLim;      // сокращение срока разрабтки
+    private Double cutLim;      // сокращение срока разрабтки
     private int newmm;          // новая трудоемкость
     private int yearMed;        // среднее количество лет реализации
     private int yearmm;         // трудоемкость по годам реализации
     private int costWork;       // Стоимость работ на разработку ППО ИС Сппо
     private int costTech;       // Стоимость техподдержки Стпо
-    private int kUser;          // Количество пользователей системы
+    private Integer kUser;          // Количество пользователей системы
     private boolean kSysProm;   // Коэффициент состояния системы
     private boolean kSysAInf;   // Коэффициент типа инф. системы
     private int persons;        // Количество занятого персонала
@@ -217,51 +219,68 @@ public class Method {
     // GET & SET //
     // kTrudFun ... kTrudNod
 
-    public int getkTrudFun() {
+    public Integer getkTrudFun() {
+        if(this.kTrudFun == null) {
+            kTrudFun = 1;}
         return kTrudFun;
     }
 
-    public void setkTrudFun(int kTrudFun) {
+    public void setkTrudFun(Integer kTrudFun) {
         this.kTrudFun = kTrudFun;
     }
 
-    public int getkTrudEnt() {
+    public Integer getkTrudEnt() {
+        if(this.kTrudEnt == null) {
+            kTrudEnt = 1;
+        }
         return kTrudEnt;
     }
 
-    public void setkTrudEnt(int kTrudEnt) {
+    public void setkTrudEnt(Integer kTrudEnt) {
         this.kTrudEnt = kTrudEnt;
     }
 
-    public int getkTrudClass() {
+    public Integer getkTrudClass() {
+        if(this.kTrudClass == null) {
+            kTrudClass = 1;
+        }
         return kTrudClass;
     }
 
-    public void setkTrudClass(int kTrudClass) {
+    public void setkTrudClass(Integer kTrudClass) {
         this.kTrudClass = kTrudClass;
     }
 
-    public int getkTrudConn() {
+    public Integer getkTrudConn() {
+        if(this.kTrudConn == null) {
+            kTrudConn = 1;
+        }
         return kTrudConn;
     }
 
-    public void setkTrudConn(int kTrudConn) {
+    public void setkTrudConn(Integer kTrudConn) {
         this.kTrudConn = kTrudConn;
     }
 
-    public int getkTrudNod() {
+    public Integer getkTrudNod() {
+        if(this.kTrudNod == null) {
+            kTrudNod = 1;
+        }
         return kTrudNod;
     }
 
-    public void setkTrudNod(int kTrudNod) {
+    public void setkTrudNod(Integer kTrudNod) {
         this.kTrudNod = kTrudNod;
     }
 
-    public int getWorkTime() {
+    public Integer getWorkTime() {
+        if(this.workTime == null) {
+            workTime = 1;
+        }
         return workTime;
     }
 
-    public void setWorkTime(int workTime) {
+    public void setWorkTime(Integer workTime) {
         this.workTime = workTime;
     }
 
@@ -345,7 +364,11 @@ public class Method {
     //////////////////////////////////////////////////////////////////////////////
     // cutLim // сокращение срока разрабтки
 
-    public double getCutLim() {
+    public Double getCutLim() {
+        if(this.cutLim == null) {
+            cutLim = rMed;
+        }
+
         if(this.cutLim < rMin || this.cutLim > rMed) {
             cutLim = rMed;
         }
@@ -463,11 +486,14 @@ public class Method {
         this.kSysAInf = kSysAInf;
     }
 
-    public int getkUser() {
+    public Integer getkUser() {
+        if(this.kUser == null) {
+            kUser = 1;
+        }
         return kUser;
     }
 
-    public void setkUser(int kUser) {
+    public void setkUser(Integer kUser) {
         this.kUser = kUser;
     }
 
