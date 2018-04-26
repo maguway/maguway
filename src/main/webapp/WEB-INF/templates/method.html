@@ -361,91 +361,97 @@
             <h5><label style="color: royalblue"><b>результат:</b></label></h5>
 
             <table border="1" bordercolor="lightgray" style="width: 1100px; border: 0px solid lightgray"
-                   rules="rows">
-                <tr style="color:royalblue">
-                    <th style="width: 190px">сроки разразботки</th>
-                    <th style="width: 610px"><label th:if="${method.rMed}!=${method.cutLim}">с учетом сокращения в
-                        пределах возможного периода в месяцах:</label></th>
-                    <th style="width: 80px; padding: 0"><p th:if="${method.rMed}!=${method.cutLim}"
-                                                           th:text="${method.cutLim}"></p></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label for="kTrudConn">минимальный срок разработки в месяцах:</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.rMin}"></p>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label for="kTrudConn">максимальный срок разработки в месяцах:</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.rMax}"></p>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label for="kTrudConn">предполагаемый срок разработки в месяцах:</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.rMed}"></p>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label for="kTrudConn">предполагаемый срок разработки в годах (минимум 1):</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.yearMed}"></p>
-                    </td>
-                    <td></td>
-                </tr>
+            rules="rows">
+            <tr style="color:royalblue">
+                <th style="width: 190px">сроки разразботки</th>
+                <th style="width: 610px"><label th:if="${method.rMed}!=${method.cutLim}">с учетом сокращения в
+                    пределах возможного периода:</label></th>
+                <th style="width: 80px; padding: 0"><p th:if="${method.rMed}!=${method.cutLim}"
+                                                       th:text="${method.cutLim}"></p></th>
+                <th></th>
+                <th style="width: 160px"><p style="text-align: left;margin-left: 0"
+                                                           th:if="${method.rMed}!=${method.cutLim}">мес.</p>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="kTrudConn">минимальный срок разработки:</label>
+                </td>
+                <td>
+                    <p th:text="${method.rMin}"></p>
+                </td>
+                <td></td>
+                <td>мес.</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="kTrudConn">максимальный срок разработки:</label>
+                </td>
+                <td>
+                    <p th:text="${method.rMax}"></p>
+                </td>
+                <td></td>
+                <td>мес.</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="kTrudConn">предполагаемый срок разработки:</label>
+                </td>
+                <td>
+                    <p th:text="${method.rMed}"></p>
+                </td>
+                <td></td>
+                <td>мес.</td>
+            </tr>
+            <!--                <tr>
+                                <td colspan="2">
+                                    <label for="kTrudConn">предполагаемый срок разработки в годах (минимум 1):</label>
+                                </td>
+                                <td>
+                                    <p th:text="${method.yearMed}"></p>
+                                </td>
+                                <td></td>
+                            </tr>-->
             </table>
 
             <br>
 
             <table border="1" bordercolor="lightgray" style="width: 1100px; border: 0px solid lightgray"
-                   rules="rows">
-                <tr style="color:royalblue">
-                    <th th:colspan="4">текущие расходы в течение года</th>
-                </tr>
-                <tr>
-                    <td width="750px">
-                        <label for="kTrudConn">стоимость техподдержки кодов ППО ИС за год</label>
-                    </td>
-                    <td style="width: 130px">
-                        <p th:text="${method.costTech}"></p>
-                    </td>
-                    <td></td>
-                    <td style="width: 160px">рубли</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="kTrudConn">стоимость техподдержки эксплуатации ППО ИС за год:</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.costOneYearSup}"
-                        ></p>
-                    </td>
-                    <td></td>
-                    <td>рубли</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="kTrudConn">стоимость сопровождения ППО ИС за год Ссппо:</label>
-                    </td>
-                    <td>
-                        <p th:text="${method.costAccomp}"></p>
-                    </td>
-                    <td></td>
-                    <td>рубли</td>
-                </tr>
+            rules="rows">
+            <tr style="color:royalblue">
+                <th th:colspan="4">текущие расходы в течение года</th>
+            </tr>
+            <tr>
+                <td width="750px">
+                    <label for="kTrudConn">стоимость техподдержки кодов ППО ИС за год</label>
+                </td>
+                <td style="width: 130px">
+                    <p th:text="${method.costTech}"></p>
+                </td>
+                <td></td>
+                <td style="width: 160px">рубли</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="kTrudConn">стоимость техподдержки эксплуатации ППО ИС за год:</label>
+                </td>
+                <td>
+                    <p th:text="${method.costOneYearSup}"
+                    ></p>
+                </td>
+                <td></td>
+                <td>рубли</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="kTrudConn">стоимость сопровождения ППО ИС за год Ссппо:</label>
+                </td>
+                <td>
+                    <p th:text="${method.costAccomp}"></p>
+                </td>
+                <td></td>
+                <td>рубли</td>
+            </tr>
             </table>
 
             <br>
