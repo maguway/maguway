@@ -18,7 +18,7 @@ public class MethodController implements Serializable{
         return new Method();
     }*/
 
-    @GetMapping({"/", "/method"})
+    @GetMapping("/")
     public String openMethod(Model model) {
         Method method = new Method();
 
